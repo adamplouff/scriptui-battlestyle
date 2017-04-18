@@ -1,5 +1,5 @@
 # BattleStyle
-This is the internal styling toolkit for Battle Axe tools to get around the standard ScriptUI grossness. It's kinda hacky and utilizes a weird ScriptUI moveTo() method to draw single-color, resolution independent icons buttons without the need for local files. If that's your scene then go crazy with it.
+This is the internal styling toolkit for Battle Axe tools to get around the standard ScriptUI grossness. It's kinda hacky and utilizes a weird ScriptUI `moveTo()` method to draw single-color, resolution independent icons buttons without the need for local files. If that's your scene then go crazy with it.
 
 ## Installation
 Download and drop it into AE's `Scripts/ScriptUI Panels` folder to test out the system with your own coordinates.

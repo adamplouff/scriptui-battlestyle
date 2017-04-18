@@ -136,7 +136,7 @@ function buttonColorVector(parentObj, iconVec, iconColor, size) {
 	@parem {buttonText} - string - button text
 */
 function buttonColorText(parentObj, accentColor, buttonText) {
-	var btn = parentObj.add('button', undefined, '');    // add a basic button to style
+	var btn = parentObj.add('button', undefined, '', {name: 'ok'});    // add a basic button to style
 			btn.fillBrush = btn.graphics.newBrush( btn.graphics.BrushType.SOLID_COLOR, hexToArray(accentColor) );
 			
 			btn.text = buttonText.toUpperCase();
