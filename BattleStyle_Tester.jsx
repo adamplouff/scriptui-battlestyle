@@ -22,11 +22,10 @@
 //================ VARIABLES ======================
 var scriptName = 'BattleStyle Tester';
 var scriptVersion = '1.0';
+var JSON;JSON||(JSON={}); (function(){function k(a){return a<10?"0"+a:a}function o(a){p.lastIndex=0;return p.test(a)?'"'+a.replace(p,function(a){var c=r[a];return typeof c==="string"?c:"\\u"+("0000"+a.charCodeAt(0).toString(16)).slice(-4)})+'"':'"'+a+'"'}function l(a,j){var c,d,h,m,g=e,f,b=j[a];b&&typeof b==="object"&&typeof b.toJSON==="function"&&(b=b.toJSON(a));typeof i==="function"&&(b=i.call(j,a,b));switch(typeof b){case "string":return o(b);case "number":return isFinite(b)?String(b):"null";case "boolean":case "null":return String(b);case "object":if(!b)return"null"; e+=n;f=[];if(Object.prototype.toString.apply(b)==="[object Array]"){m=b.length;for(c=0;c<m;c+=1)f[c]=l(c,b)||"null";h=f.length===0?"[]":e?"[\n"+e+f.join(",\n"+e)+"\n"+g+"]":"["+f.join(",")+"]";e=g;return h}if(i&&typeof i==="object"){m=i.length;for(c=0;c<m;c+=1)typeof i[c]==="string"&&(d=i[c],(h=l(d,b))&&f.push(o(d)+(e?": ":":")+h))}else for(d in b)Object.prototype.hasOwnProperty.call(b,d)&&(h=l(d,b))&&f.push(o(d)+(e?": ":":")+h);h=f.length===0?"{}":e?"{\n"+e+f.join(",\n"+e)+"\n"+g+"}":"{"+f.join(",")+ "}";e=g;return h}}if(typeof Date.prototype.toJSON!=="function")Date.prototype.toJSON=function(){return isFinite(this.valueOf())?this.getUTCFullYear()+"-"+k(this.getUTCMonth()+1)+"-"+k(this.getUTCDate())+"T"+k(this.getUTCHours())+":"+k(this.getUTCMinutes())+":"+k(this.getUTCSeconds())+"Z":null},String.prototype.toJSON=Number.prototype.toJSON=Boolean.prototype.toJSON=function(){return this.valueOf()};var q=/[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, p=/[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,e,n,r={"\u0008":"\\b","\t":"\\t","\n":"\\n","\u000c":"\\f","\r":"\\r",'"':'\\"',"\\":"\\\\"},i;if(typeof JSON.stringify!=="function")JSON.stringify=function(a,j,c){var d;n=e="";if(typeof c==="number")for(d=0;d<c;d+=1)n+=" ";else typeof c==="string"&&(n=c);if((i=j)&&typeof j!=="function"&&(typeof j!=="object"||typeof j.length!=="number"))throw Error("JSON.stringify");return l("", {"":a})};if(typeof JSON.parse!=="function")JSON.parse=function(a,e){function c(a,d){var g,f,b=a[d];if(b&&typeof b==="object")for(g in b)Object.prototype.hasOwnProperty.call(b,g)&&(f=c(b,g),f!==void 0?b[g]=f:delete b[g]);return e.call(a,d,b)}var d,a=String(a);q.lastIndex=0;q.test(a)&&(a=a.replace(q,function(a){return"\\u"+("0000"+a.charCodeAt(0).toString(16)).slice(-4)}));if(/^[\],:{}\s]*$/.test(a.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,"@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, "]").replace(/(?:^|:|,)(?:\s*\[)+/g,"")))return d=eval("("+a+")"),typeof e==="function"?c({"":d},""):d;throw new SyntaxError("JSON.parse");}})();
 
 
 // ================ FUNCTIONS =============
-
-var JSON;JSON||(JSON={}); (function(){function k(a){return a<10?"0"+a:a}function o(a){p.lastIndex=0;return p.test(a)?'"'+a.replace(p,function(a){var c=r[a];return typeof c==="string"?c:"\\u"+("0000"+a.charCodeAt(0).toString(16)).slice(-4)})+'"':'"'+a+'"'}function l(a,j){var c,d,h,m,g=e,f,b=j[a];b&&typeof b==="object"&&typeof b.toJSON==="function"&&(b=b.toJSON(a));typeof i==="function"&&(b=i.call(j,a,b));switch(typeof b){case "string":return o(b);case "number":return isFinite(b)?String(b):"null";case "boolean":case "null":return String(b);case "object":if(!b)return"null"; e+=n;f=[];if(Object.prototype.toString.apply(b)==="[object Array]"){m=b.length;for(c=0;c<m;c+=1)f[c]=l(c,b)||"null";h=f.length===0?"[]":e?"[\n"+e+f.join(",\n"+e)+"\n"+g+"]":"["+f.join(",")+"]";e=g;return h}if(i&&typeof i==="object"){m=i.length;for(c=0;c<m;c+=1)typeof i[c]==="string"&&(d=i[c],(h=l(d,b))&&f.push(o(d)+(e?": ":":")+h))}else for(d in b)Object.prototype.hasOwnProperty.call(b,d)&&(h=l(d,b))&&f.push(o(d)+(e?": ":":")+h);h=f.length===0?"{}":e?"{\n"+e+f.join(",\n"+e)+"\n"+g+"}":"{"+f.join(",")+ "}";e=g;return h}}if(typeof Date.prototype.toJSON!=="function")Date.prototype.toJSON=function(){return isFinite(this.valueOf())?this.getUTCFullYear()+"-"+k(this.getUTCMonth()+1)+"-"+k(this.getUTCDate())+"T"+k(this.getUTCHours())+":"+k(this.getUTCMinutes())+":"+k(this.getUTCSeconds())+"Z":null},String.prototype.toJSON=Number.prototype.toJSON=Boolean.prototype.toJSON=function(){return this.valueOf()};var q=/[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, p=/[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,e,n,r={"\u0008":"\\b","\t":"\\t","\n":"\\n","\u000c":"\\f","\r":"\\r",'"':'\\"',"\\":"\\\\"},i;if(typeof JSON.stringify!=="function")JSON.stringify=function(a,j,c){var d;n=e="";if(typeof c==="number")for(d=0;d<c;d+=1)n+=" ";else typeof c==="string"&&(n=c);if((i=j)&&typeof j!=="function"&&(typeof j!=="object"||typeof j.length!=="number"))throw Error("JSON.stringify");return l("", {"":a})};if(typeof JSON.parse!=="function")JSON.parse=function(a,e){function c(a,d){var g,f,b=a[d];if(b&&typeof b==="object")for(g in b)Object.prototype.hasOwnProperty.call(b,g)&&(f=c(b,g),f!==void 0?b[g]=f:delete b[g]);return e.call(a,d,b)}var d,a=String(a);q.lastIndex=0;q.test(a)&&(a=a.replace(q,function(a){return"\\u"+("0000"+a.charCodeAt(0).toString(16)).slice(-4)}));if(/^[\],:{}\s]*$/.test(a.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,"@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, "]").replace(/(?:^|:|,)(?:\s*\[)+/g,"")))return d=eval("("+a+")"),typeof e==="function"?c({"":d},""):d;throw new SyntaxError("JSON.parse");}})();
 
 /** draw an icon with a colored background
 	@parem {parentObj} - object - ScriptUI 
@@ -100,6 +99,11 @@ function buttonColorVector(parentObj, iconVec, iconColor, size) {
 	}
 }
 
+/** draw an icon with a colored background
+	@parem {parentObj} - object - ScriptUI 
+	@parem {accentColor} - string - icon color 
+	@parem {buttonText} - string - button text
+*/
 function buttonColorText(parentObj, accentColor, buttonText) {
 	var btn = parentObj.add('button', undefined, '');    // add a basic button to style
 			btn.fillBrush = btn.graphics.newBrush( btn.graphics.BrushType.SOLID_COLOR, hexToArray(accentColor) );
@@ -141,44 +145,9 @@ function buttonColorText(parentObj, accentColor, buttonText) {
 	}
 }
 
-function launchSettings() {   // open an additional window
-	var win = new Window('dialog', 'About', undefined, {resizeable:true});
-
-	//stop if there's no window
-	if (win === null) return;
-
-	// set margins and alignment
-	win.alignChildren = ['fill','fill'];
-	win.margins = 5;
-	win.spacing = 2;
-
-	{   // ============ ADD UI CONTENT HERE =================
-		var content = win.add('group');
-		content.alignChildren = ['fill','fill'];
-		content.orientation = 'column';
-		content.margins = 0;
-		content.spacing = 2;
-		content.add('statictext',undefined,'This is a script called: ' + scriptName);
-
-		var dialogButtons = win.add('group');
-		dialogButtons.alignChildren = ['fill','fill'];
-		dialogButtons.orientation = 'row';
-		dialogButtons.margins = 0;
-		dialogButtons.spacing = 2;
-		dialogButtons.add('button',undefined,'OK');
-		dialogButtons.add('button',undefined,'Cancel');
-	}
-
-	{
-		// Set layout, and resize it on resize of the Panel/Window
-		win.layout.layout(true);
-		win.layout.resize();
-		win.onResizing = win.onResize = function () {win.layout.resize();};
-		//if the script is not a Panel (launched from File/Scripts/Run script...) we need to show it
-		if (!(win instanceof Panel)) win.show();
-	}
-}
-
+/** open url in browser
+	@parem {url} - string - url 
+*/
 function visitURL(url) {    // create clickable links
 		if ($.os.indexOf("Windows") != -1) {
 				system.callSystem('cmd /c "' + Folder.commonFiles.parent.fsName + "\\Internet Explorer\\iexplore.exe" + '" ' + url);
@@ -209,7 +178,7 @@ content.spacing = 2;
 
 var icons = {
 	rubberhose: ['52.03 16.03 52.03 17.53 50.53 17.53 48.53 17.53 48.53 19.53 50.53 19.53 50.53 17.53 52.03 17.53 52.03 21.03 47.03 21.03 47.03 17.44 32.78 4.158 11.55 8.422 9.57 11.3 5.425 8.57 8.221 4.425 9.465 5.264 8.626 6.507 7.507 8.16 9.16 9.28 10.28 7.626 8.626 6.507 9.465 5.264 11.22 6.44 33.38 1.998 48.45 16.03',
-				'31 13 31 10 28 10 28 13 25 13 25 16 28 16 28 19 31 19 31 16 34 16 34 13'],
+								'31 13 31 10 28 10 28 13 25 13 25 16 28 16 28 19 31 19 31 16 34 16 34 13'],
 	rubberrig: ['31.1242 14.5004 18.0002 8.5624 18.9992 3.8114 26.0622 1.0004 35.6882 10.2494 33.8087038 12 31.5624997 12 31.5624997 10 29 10 29 12 33.8087038 12',
 				      '31.3191 15.6857 27.6271 14.0157 27.4531 15.3747 30.5621 21.9997 33.5631 22.9997 35.3911 11.8927',
 				      '24 14 22 18 26 19 24 17',
@@ -246,8 +215,6 @@ var et_default = 'Paste SVG coordinate shit here';
 var et_coords = content.add('edittext', undefined, getCoordString(ddl_presets.selection.text), {multiline:'true'});
 		et_coords.minimumSize.height = 90;
 		et_coords.maximumSize.height = 90;
-		et_coords.addEventListener('focus', function() { clearInput(et_coords, et_default) });
-		et_coords.addEventListener('blur', function() { defaultInput(et_coords, et_default) });
 
 var grp_buttons = content.add('group');
 		grp_buttons.margins = [0,4,0,10];
@@ -283,18 +250,6 @@ function updateButton(pGrp) {
 
 	mainPalette.layout.layout(true);
 	mainPalette.layout.resize()
-}
-
-// edittext functions
-function clearInput(edittext, defaultText) {
-	if (edittext.text === defaultText ) {
-		edittext.text = '';
-	}
-}
-function defaultInput(edittext, defaultText) {
-	if (edittext.text === '') {
-			edittext.text = defaultText;
-	}
 }
 
 function getCoordString(index) {
