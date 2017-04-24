@@ -25,6 +25,9 @@ Copy the raw coordinates from an SVG file into an array of text strings. Feed th
     visibility: ['21. 9.44 26.3 8.84 22.2 11.2 24.9 16.4 33.7 16.4 38.6 11.9 10.0 33.5 12. 30 11.2 32.0 8.82 36.3 8.84 47 13 36 21 21 21 13 13 20 4 38 2 47 13 44.1 12.6 37.1 4.10 21. 5.92 16.9 11.3']
 }`
 
+## Issues
+As far as I know, roll-over states are not possible. If you can figure it out then let me know. 
+
 ## Credits
 Originally based on a super old post for drawing colored text buttons.
 [[JS CS3/4] ScriptUI How to color a button ?][799ff023]
