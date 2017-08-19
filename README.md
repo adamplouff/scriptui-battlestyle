@@ -13,8 +13,9 @@ Download and drop it into AE's `Scripts/ScriptUI Panels` folder to test out the 
 Copy and tweak `buttonColorVector()` in your own project. Arguments:
 - _parent object_ - ScriptUI panel or group
 - _vector string_ - SVG coordinates as string(s) in an array
-- _hex color string_ - #039BE5
 - _size - size array_ with the art dimensions
+- _static hex color string_ - #546E7A
+- _hover hex color string_ - #55869D (optional)
 
 ## Coordinates
 Copy the raw coordinates from an SVG file into an array of text strings. Feed this string into the `buttonColorVector()`. I like to store a bunch of icons in an object for added clarity.
@@ -26,7 +27,7 @@ Copy the raw coordinates from an SVG file into an array of text strings. Feed th
 }`
 
 ## Issues
-As far as I know, roll-over states are not possible. If you can figure it out then let me know. 
+~~As far as I know, roll-over states are not possible. If you can figure it out then let me know.~~  Roll-over states added in 1.1
 
 ## Credits
 Originally based on a super old post for drawing colored text buttons.
