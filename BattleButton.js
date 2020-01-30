@@ -29,20 +29,48 @@ function BattleButton(parentGroup, coordinates, colors) {
 
 
 	addEventListeners(button);
-	dispatchMouseEvent(button, 'mouseout');
 
 	return button;
 
 
 
 	function addEventListeners(element) {
-		for (var i = 0, il = eventTypes.length; i < il; i++) {
-			element.addEventListener(eventTypes[i], setColors);
+		var eventsToListen = getEventsToListen(element);
+
+		// Do not add listener when only 'mouseout' event is registered.
+		// Instead, simply set element color.
+		if (eventsToListen.length === 1 && eventsToListen[0] === 'mouseout') {
+			var mouseEvent = createMouseEvent();
+			mouseEvent.initMouseEvent('mouseout');
+			setColors.call(element, mouseEvent);
+		} else {
+			for (var i = 0, il = eventsToListen.length; i < il; i++) {
+				element.addEventListener(eventsToListen[i], setColors);
+			}
+
+			dispatchMouseEvent(button, 'mouseout');
+		}
+
+		function getEventsToListen() {
+			var eventsToListen = [];
+			for (var i = 0, il = eventTypes.length; i < il; i++) {
+				if (element.artColor.hasOwnProperty(eventTypes[i]) ||
+					element.backgroundColor.hasOwnProperty(eventTypes[i]) ||
+					element.textColor.hasOwnProperty(eventTypes[i])) {
+					eventsToListen.push(eventTypes[i]);
+				}
+			}
+
+			return eventsToListen;
 		}
 	}
 
+	function createMouseEvent() {
+		return ScriptUI.events.createEvent('MouseEvent');
+	}
+
 	function dispatchMouseEvent(element, type) {
-		var mouseEvent = ScriptUI.events.createEvent('MouseEvent');
+		var mouseEvent = createMouseEvent();
 		mouseEvent.initMouseEvent(type);
 		element.dispatchEvent(mouseEvent);
 	}
