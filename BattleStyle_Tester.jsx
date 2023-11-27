@@ -206,7 +206,7 @@
     			// fail silently
     		}
         }
-
+		updateVectorButtonOnHover(this, iconVec, staticColor, size); //for the button to not disappear when a panel such as After Effects'preferences is opened then closed.
 		return btn;
 	}
 
